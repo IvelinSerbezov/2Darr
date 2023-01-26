@@ -1,0 +1,55 @@
+package zadachi;
+import java.util.Scanner;
+public class dvumeren_masiv {
+	public static void input(double [][]arr) {
+		Scanner inp=new Scanner(System.in);
+		  for (int i=0;i<arr.length;i++) {
+	            for (int j=0;j<arr[i].length;j++) {
+	            	 System.out.print("Въведете член "+"["+i+"]"+"["+j+"]"+" : ");
+	        		 arr[i][j]=inp.nextInt();
+	            }
+	            System.out.println();
+	      }
+	               
+	}
+	 public static void output (double [][]arr) {
+		 for (int i=0;i<arr.length;i++) {
+			 for (int j=0;j<arr[i].length;j++) {
+				 System.out.print("Член "+"["+i+"]"+"["+j+"] е "+arr[i][j]+"; ");
+		  }
+		 System.out.println();
+		 }
+	}
+
+	 public static void averagepos(double [][]arr) {
+		 double sum=0,br=0;
+		 for (int i=0;i<arr.length;i++) {
+			 for (int j=0;j<arr[i].length;j++) {
+			 if(arr[i][j]>0) {sum=sum+arr[i][j];br++;}
+			 	}
+			 }
+		 System.out.println("Средноаритметичното на положителните елементи е "+(sum/br));
+	 }
+	 public static void minmax(double [][]arr) {
+		 double max=arr[0][0],min=arr[0][0];
+		 for (int i=0;i<arr.length;i++) {
+			 for (int j=0;j<arr[i].length;j++) {
+		 if(arr[i][j]>max) max=arr[i][j];
+		 if(arr[i][j]<min) min=arr[i][j];
+			 }
+		 }
+		 System.out.println("Сумата на минималния и максималния елемент е "+(max+min));
+	 }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner inp =new Scanner(System.in);
+int n=inp.nextInt();
+int m=inp.nextInt();
+double[][] arr = new double[n][m];
+input(arr);
+output(arr);
+averagepos(arr);
+minmax(arr);
+	}
+
+}
